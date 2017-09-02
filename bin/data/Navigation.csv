@@ -1,0 +1,15 @@
+ID;MenuName;ParentID;isHidden;LinkURL
+
+1;1;NULL;False;/company
+2;2;1;False;/company/aboutus
+3;4;1;False;/company/mission
+4;3;2;False;/company/aboutus/team
+
+
+5;7;7;False;/references/client2
+6;6;7;False;/references/client1
+
+7;5;NULL;False;/references
+
+8;8;6;False;/references/client1/deeper1
+6;6;5;False;/references/client2
