@@ -1,6 +1,8 @@
 package solution;
 
 import java.nio.file.Files;
+import java.util.Collections;
+import java.util.Comparator;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -142,6 +144,10 @@ public class NTree
 			System.out.println(n.data);
 		}
 	}
+	
+	
+	
+	
 	public static void main(String arg [])
 	{
 		try {
@@ -175,13 +181,13 @@ public class NTree
 					if(menuName.length() > 0 && parentID.length()> 0 &&  isHidden.length()> 1 && linkURL.length()> 1)//verify
 					{
 																	
-						if(!isInteger(parentID))
+						if(!isInteger(parentID))// if parentID == NULL
 							parentID = parentID.toUpperCase();
 							
 							
 						if(parentID.equals("NULL")  &&  isHidden.equals("FALSE")&& n2 == 1) // level 1 parents
 						{
-							Node node = new Node(". " + menuName,ID,0);
+							Node node = new Node(". " + menuName,ID,0,linkURL);														
 							listNodes.add(node);
 				
 							tree.addParent(node);
@@ -203,7 +209,7 @@ public class NTree
 						
 							}
 														
-							listNodes.add(new Node(value + " " + menuName,ID,parent_ID));
+							listNodes.add(new Node(value + " " + menuName,ID,parent_ID,linkURL));
 											
 					     }
 				     }
@@ -212,7 +218,23 @@ public class NTree
 			}//end for loop
 			
 		
+			
 			//display(listNodes);
+			
+			
+			Collections.sort(listNodes, new Comparator<Node>(){
+				public int compare(Node o1, Node o2) {
+				
+				return o1.linkUrL.compareTo(o2.linkUrL);
+			}
+				
+			});
+			
+			//System.out.println("---------");				
+		
+			//display(listNodes);
+			
+			
 			
 			for (int i = 0; i < listNodes.size(); i++) {
 				
