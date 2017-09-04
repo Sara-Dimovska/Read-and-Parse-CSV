@@ -25,17 +25,20 @@ import java.util.List;
           /team    
 
 
-      to  Binary:
+
+
+               to  Binary:
+      
                            root            
                            /   
                           /                                   
-                 /company 1;0         --->           /references 10;0 --->  ....   
+                 /company          --->           /references  --->  ....   
                        /                                    / 
                       /                                    /                                                          
-                  /aboutus 2;1 ---> /mission            /client1 6;10  --->  /client2  7;10 
+                  /aboutus  ---> /mission            /client1   --->  /client2  
                    /
                   /
-              /team  4;2
+              /team  
 
 
  */
@@ -88,7 +91,7 @@ public class NTree
 	{		
 		for(int i= 0;i<nodes.size();i++)
         {
-            if(nodes.get(i).ID == parentID)
+            if(nodes.get(i).getID() == parentID)
                 return nodes.get(i);
         }
 
@@ -100,7 +103,7 @@ public class NTree
 		
 		   if (root == null) return;
 		   
-			 System.out.println(root.data);
+			 System.out.println(root.getData());
 		   	 preorder(root.child);		   	
 		   	 preorder(root.sibling);
 		   
@@ -225,7 +228,7 @@ public class NTree
 			Collections.sort(listNodes, new Comparator<Node>(){
 				public int compare(Node o1, Node o2) {
 				
-				return o1.linkUrL.compareTo(o2.linkUrL);
+				return o1.getLinkUrL().compareTo(o2.getLinkUrL());
 			}
 				
 			});
@@ -240,7 +243,7 @@ public class NTree
 				
 				if(listNodes.get(i).ID != 0)//if child
 				{
-					Node parent = tree.find_parentNode(listNodes, listNodes.get(i).parentID);
+					Node parent = tree.find_parentNode(listNodes, listNodes.get(i).getParentID());
 		            tree.addTreeNode(parent, listNodes.get(i));
 				}
 	         
