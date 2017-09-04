@@ -140,16 +140,7 @@ public class NTree
 		return true;
 	}
 	
-	public static void display(ArrayList<Node> niza)
-	{
-		for(Node n:niza)
-		{
-			System.out.println(n.data);
-		}
-	}
-	
-	
-	
+
 	
 	public static void main(String arg [])
 	{
@@ -218,13 +209,9 @@ public class NTree
 				     }
 
 			      }
-			}//end for loop
+			}
 			
-		
-			
-			//display(listNodes);
-			
-			
+			// sort the arrayList alphabetically
 			Collections.sort(listNodes, new Comparator<Node>(){
 				public int compare(Node o1, Node o2) {
 				
@@ -233,12 +220,8 @@ public class NTree
 				
 			});
 			
-			//System.out.println("---------");				
-		
-			//display(listNodes);
-			
-			
-			
+								
+			// add the children to the tree
 			for (int i = 0; i < listNodes.size(); i++) {
 				
 				if(listNodes.get(i).ID != 0)//if child
@@ -250,12 +233,8 @@ public class NTree
 	        }
 			
 			
-			
-			
 	        tree.preorder(tree.root);
-		
-			
-			
+	
 			
 		}//end try block
 					
