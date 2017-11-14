@@ -1,6 +1,6 @@
 # Read-and-Parse-CSV
 
-This repo contains console application solution to an Interview Task.The application reads from the attached file "Navigation.csv"
+This repo contains console application solution.The application reads from the attached file "Navigation.csv"
 and it's content could look like this for example:
 
       ID;MenuName;ParentID;isHidden;LinkURL
